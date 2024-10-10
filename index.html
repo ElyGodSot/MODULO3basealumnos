@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos Alumnos</title>
+    <link rel="stylesheet" href="newproyecto.css">
+</head>
+
+<body>
+    <header>
+        <h1>BASE DE DATOS DE ALUMNOS</h1>
+    </header>
+    <main>
+        
+        <!-- Formulario para dar Alta de Materias -->
+        <section class="altadematerias">
+            <h2>Alta de Materias</h2>
+            <form>
+                <label for="Materia1">Materia 1:</label>
+                <input type="text" id="Materia1" name="Materia1">
+                <button type="button" onclick="altademateria1()">Crear materia</button>
+                <br><br>
+                <label for="Materia2">Materia 2:</label>
+                <input type="text" id="Materia2" name="Materia2">
+                <button type="button" onclick="altademateria2()">Crear materia</button>
+                <br><br>
+                <label for="Materia3">Materia 3:</label>
+                <input type="text" id="Materia3" name="Materia3">
+                <button type="button" onclick="altademateria3()">Crear materia</button>
+                <br><br>
+                <label for="Materia4">Materia 4:</label>
+                <input type="text" id="Materia4" name="Materia4">
+                <button type="button" onclick="altademateria4()">Crear materia</button>
+            </form>
+        </section>
+
+        <!-- Formulario para Agregar Alumno -->
+        <section class="agregar">
+            <h2>Agregar Alumno</h2>
+            <form>
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" name="Nombre">
+                <br><br>
+                <label for="Apellido">Apellido:</label>
+                <input type="text" id="Apellido" name="Apellido">
+                <br><br>
+                <label for="Edad">Edad:</label>
+                <input type="number" id="Edad" name="Edad">
+                <br><br>
+                <label for="Materia">Materia:</label>
+                <input type="text" id="Materia" name="Materia">
+                <br><br>
+                <button type="button" id="Agregar" onclick="agregar()">Dar alumno de alta</button>
+            </form>
+        </section>
+
+        <!-- Formulario para Asignar Calificaciones -->
+        <section class="asignarcalificaciones">
+            <h2>Asignar Calificaciones</h2>
+            <form>
+                <label for="AlumnoCalificacion">Nombre / Apellido del Alumno:</label>
+                <select id="AlumnoCalificacion" name="AlumnoCalificacion">
+                    <!-- Opciones generadas dinámicamente -->
+                </select>
+                <br><br>
+                <label for="MateriaCalificacion">Materia:</label>
+                <select id="MateriaCalificacion" name="MateriaCalificacion">
+                    <!-- Opciones generadas dinámicamente -->
+                </select>
+                <br><br>
+                <label for="Calificacion">Calificación:</label>
+                <input type="number" id="Calificacion" name="Calificacion" min="0" max="100">
+                <br><br>
+                <button type="button" onclick="asignarCalificacion()">Asignar Calificación</button>
+            </form>
+        </section>
+
+        <!-- Formulario de Resultado de Promedio de Materias -->
+        <section class="tablas">
+            <h2>Promedio de Materias</h2>
+            <article>
+                <p id="materia1"></p>
+                <table id="materia11">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Materia</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+                            
+                        </tr>
+                    </tbody>
+                
+                </table>
+            </article>
+
+            
+            <!-- Repetir para cada materia -->
+            <article>
+                <p id="materia2"></p>
+                <table id="materia22">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Materia</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody2">
+                        <tr>
+                            
+                        </tr>
+                    </tbody>
+                 
+                </table>
+            </article>
+            
+            <!-- Repetir para materia 3 y 4 -->
+            <article>
+                <p id="materia3"></p>
+                <table id="materia33">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Materia</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody3">
+                        <tr>
+                           
+                        </tr>
+                    </tbody>
+              
+                </table>
+            </article>
+            
+            <article>
+                <p id="materia4"></p>
+                <table id="materia44">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Materia</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody4">
+                        <tr>
+                           
+                        </tr>
+                    </tbody>
+                
+                </table>
+            </article>
+        </section>
+
+        <!-- Formulario para Buscar Alumno -->
+        <section class="buscaralumno">
+            <h2>Buscar Alumno</h2>
+            <form>
+                <label for="Alumno">Nombre / Apellido:</label>
+                <input type="text" id="Alumnobuscado" name="Alumnobuscado">
+                <button type="button" onclick="buscaralumno()">Buscar alumno</button>
+            </form>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Calificación</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyAlumn">
+                    <tr>
+                        <td><p id="mat1"></p> </td>
+                        <td><p id="calif1"></p> </td>
+                    </tr>
+                    <tr>
+                        <td><p id="mat2"></p> </td>
+                        <td><p id="calif2"></p> </td>
+                    </tr>
+                    <tr>
+                        <td><p id="mat3"></p> </td>
+                        <td><p id="calif3"></p> </td> 
+                    </tr>
+                    <tr>
+                        <td><p id="mat4"></p> </td>
+                        <td><p id="calif4"></p> </td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" id="promedioalumno">PROMEDIO:</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+    </main>
+    <script src="newproyecto.js"></script>
+</body>
+</html>

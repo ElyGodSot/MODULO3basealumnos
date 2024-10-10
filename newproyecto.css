@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F8FF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #00796B;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px #999;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+    color: #004D40;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Main Grid Layout */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+/* Forms and Sections */
+section {
+    background-color: #B2DFDB;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #999;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #009688;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00796B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004D40;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #004D40;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #004D40;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #E0F2F1;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #C8E6C9;
+}
+
+tfoot {
+    font-weight: bold;
+    background-color: #B2DFDB;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+    }
+}
+
+.tablas table {
+    width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.tablas {
+    overflow-x: auto;
+}
+
+.tablas table th {
+    font-size: 0.4em;
+}
